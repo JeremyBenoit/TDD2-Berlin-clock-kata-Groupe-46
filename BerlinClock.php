@@ -2,7 +2,11 @@
 
 class BerlinClock
 {
-
+    /**
+     * Transform minutes number into berlin clock format
+     * @param $minutes
+     * @return string berlin clock format
+     */
     public function getSimplesMinutes($minutes):string
     {
         $string = "";
