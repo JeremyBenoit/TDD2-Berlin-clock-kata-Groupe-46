@@ -85,4 +85,41 @@ class BerlinClockTest extends TestCase
     }
 
 
+    //Testing getSimpleHours
+    public function testGetSimpleHoursGiven2HoursShouldReturnRROO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSimplesHours(2);
+        //Assert
+        $this->assertEquals("RROO",$actual);
+    }
+    public function testGetSimpleHoursGiven0HoursShouldReturnOOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSimplesHours(0);
+        //Assert
+        $this->assertEquals("OOOO",$actual);
+    }
+    public function testGetSimpleHoursGiven4HoursShouldReturnRRRR()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSimplesHours(4);
+        //Assert
+        $this->assertEquals("RRRR",$actual);
+    }
+    public function testGetSimpleHoursGiven3HoursShouldReturnRRRO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSimplesHours(3);
+        //Assert
+        $this->assertEquals("RRRO",$actual);
+    }
 }
