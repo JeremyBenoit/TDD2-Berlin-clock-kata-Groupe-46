@@ -75,4 +75,14 @@ class BerlinClock
         if($seconds%2==0)return "Y";
         return "O";
     }
+
+    public function getFullClock($hours,$minutes,$seconds):string
+    {$string = "";
+        $string .= $this->getSecondsLamp($seconds);
+        $string .= $this->getFiveHoursBlock($hours);
+        $string .= $this->getSimplesHours($hours);
+        $string .= $this->getFiveMinutesBlock($minutes);
+        $string .= $this->getSimplesMinutes($minutes);
+        return $string;
+    }
 }
