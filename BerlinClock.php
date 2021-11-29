@@ -20,4 +20,25 @@ class BerlinClock
         }
         return $string;
     }
+
+    /**
+     * Transform minutes number into berlin clock format
+     * @param $minutes
+     * @return string berlin clock format
+     */
+    public function getFiveMinutesBlock($minutes):string
+    {
+        $string = "";
+        $nbLampOn = floor($minutes/5);
+        for ($i = 0; $i < 11; $i++){
+            if($i<$nbLampOn && $i%3!=2){
+                $string .= "Y";
+            } elseif ($i<$nbLampOn){
+                $string .= "R";
+            } else {
+                $string .= "O";
+            }
+        }
+        return $string;
+    }
 }
