@@ -122,4 +122,43 @@ class BerlinClockTest extends TestCase
         //Assert
         $this->assertEquals("RRRO",$actual);
     }
+
+
+    //Testing getFiveHoursBlock
+    public function testGetFiveHoursBlockGiven12HoursShouldReturnRROO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveHoursBlock(12);
+        //Assert
+        $this->assertEquals("RROO",$actual);
+    }
+    public function testGetFiveHoursBlockGiven2HoursShouldReturnOOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveHoursBlock(2);
+        //Assert
+        $this->assertEquals("OOOO",$actual);
+    }
+    public function testGetFiveHoursBlockGiven23HoursShouldReturnRRRR()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveHoursBlock(23);
+        //Assert
+        $this->assertEquals("RRRR",$actual);
+    }
+    public function testGetFiveHoursBlockGiven17HoursShouldReturnRRRO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveHoursBlock(17);
+        //Assert
+        $this->assertEquals("RRRO",$actual);
+    }
 }

@@ -55,4 +55,18 @@ class BerlinClock
         }
         return $string;
     }
+
+    public function getFiveHoursBlock($hours):string
+    {
+        $string = "";
+        $nbLampOn = floor($hours/5);
+        for ($i = 0; $i < 4; $i++){
+            if ($i<$nbLampOn){
+                $string .= "R";
+            } else {
+                $string .= "O";
+            }
+        }
+        return $string;
+    }
 }
