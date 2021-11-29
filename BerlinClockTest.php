@@ -181,4 +181,25 @@ class BerlinClockTest extends TestCase
         //Assert
         $this->assertEquals("Y",$actual);
     }
+
+    //Testing getFullClock
+    public function testGetFullClockGiven12H42M34SShouldReturnYRROORROOYYRYYRYYOOOYYOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFullClock(12,42,34);
+        //Assert
+        $this->assertEquals("ORROORROOYYRYYRYYOOOYYOO",$actual);
+    }
+
+    public function testGetFullClockGiven23H59M59SShouldReturnORRRRRRROYYRYYRYYRYYYYYY()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFullClock(23,59,59);
+        //Assert
+        $this->assertEquals("ORRRRRRROYYRYYRYYRYYYYYY",$actual);
+    }
 }
