@@ -44,4 +44,45 @@ class BerlinClockTest extends TestCase
         //Assert
         $this->assertEquals("YYOO",$actual);
     }
+
+    //Testing getFiveMinutesBlock
+    public function testGetFiveMinutesBlockGiven43MinutesShouldReturnYYRYYRYYOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveMinutesBlock(43);
+        //Assert
+        $this->assertEquals("YYRYYRYYOOO",$actual);
+    }
+
+    public function testGetFiveMinutesBlockGiven11MinutesShouldReturnYYOOOOOOOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveMinutesBlock(11);
+        //Assert
+        $this->assertEquals("YYOOOOOOOOO",$actual);
+    }
+    public function testGetFiveMinutesBlockGiven39MinutesShouldReturnYYRYYRYOOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveMinutesBlock(39);
+        //Assert
+        $this->assertEquals("YYRYYRYOOOO",$actual);
+    }
+    public function testGetFiveMinutesBlockGiven32MinutesShouldReturnYYRYYROOOO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getFiveMinutesBlock(32);
+        //Assert
+        $this->assertEquals("YYRYYROOOOO",$actual);
+    }
+
+
 }
