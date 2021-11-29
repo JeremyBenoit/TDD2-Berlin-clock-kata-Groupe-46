@@ -161,4 +161,24 @@ class BerlinClockTest extends TestCase
         //Assert
         $this->assertEquals("RRRO",$actual);
     }
+
+    //Testing getSecondsLamp
+    public function testGetSecondsLampGiven1SecondsShouldReturnO()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSecondsLamp(1);
+        //Assert
+        $this->assertEquals("O",$actual);
+    }
+    public function testGetSecondsLampGiven42SecondsShouldReturnY()
+    {
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->getSecondsLamp(42);
+        //Assert
+        $this->assertEquals("Y",$actual);
+    }
 }

@@ -69,4 +69,10 @@ class BerlinClock
         }
         return $string;
     }
+
+    public function getSecondsLamp($seconds):string
+    {
+        if($seconds%2==0)return "Y";
+        return "O";
+    }
 }
